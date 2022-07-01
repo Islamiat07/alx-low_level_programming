@@ -1,26 +1,24 @@
 #include <stdio.h>
-
 /**
- * main - prints the numbers from 00 to 99
- * Return: Always 0 (success)
+ * main - program that prints numbers from 0 to 99.
+ * Return: 0
  */
+
 int main(void)
 {
-	int n, m;
+	int c = 0;
 
-	for (n = 48; n <= 57; n++)
+	while (c <= 99)
 	{
-		for (m = 48; m <= 57; m++)
+		putchar(c / 10 + '0');
+		putchar(c % 10 + '0');
+		if (c != 99)
 		{
-			putchar(n);
-			putchar(m);
-			if (n != 57 || m != 57)
-			{
-				putchar(',');
-				putchar(' ');
-			}
+			putchar(',');
+			putchar(' ');
 		}
+		c++;
 	}
-	putchar('\n');
-	return (0);
+putchar('\n');
+return (0);
 }
