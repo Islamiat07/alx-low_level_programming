@@ -1,24 +1,31 @@
 #include <stdio.h>
+
 /**
- * main - program that prints numbers from 0 to 99.
+ * main - print all numbers from 00 to 99 where the first numb is < last numb
+ *
  * Return: 0
  */
 
 int main(void)
 {
-	int c = 0;
+	int i, j;
 
-	while (c <= 99)
+	for (i = 0; i < 10; i++)
 	{
-		putchar(c / 10 + '0');
-		putchar(c % 10 + '0');
-		if (c != 99)
+		for (j = 0; j < 10; j++)
 		{
-			putchar(',');
-			putchar(' ');
+			if (i < j)
+			{
+				putchar(i + 48);
+				putchar(j + 48);
+				if (i * j != 72)
+				{
+					putchar(44);
+					putchar(32);
+				}
+			}
 		}
-		c++;
 	}
-putchar('\n');
-return (0);
+	putchar(10);
+	return (0);
 }
