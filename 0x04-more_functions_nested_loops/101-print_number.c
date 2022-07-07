@@ -1,44 +1,26 @@
 #include "main.h"
 
 /**
- * print_number - prints out the specified number one char at a time
- * @n: Number to be printed
- * Description: zeroflag is set to print leading zeros when dropped from math.
+ * print_number - prints an integer
+ * @n: integer to be printed
  */
-
 void print_number(int n)
 {
-	int size;
-
-	size = 1000000000;
+	unsigned int n1;
 
 	if (n < 0)
 	{
+		n1 = -n;
 		_putchar('-');
-		n *= -1;
-	}
-	else if (n == 0)
+	} else
 	{
-		_putchar('0');
+		n1 = n;
 	}
 
-	while (size > 0)
+	if (n1 / 10)
 	{
-		if (n >= size)
-		{
-			if (size >= 10)
-			{
-				_putchar((n / size) % 10 + '0');
-			}
-			else
-			{
-				_putchar(n % 10 + '0');
-				n = 0;
-			}
-		}
-		if (size > 1)
-			size = size / 10;
-		else
-			size = 0;
+		print_number(n1 / 10);
 	}
+
+	_putchar((n1 % 10) + '0');
 }
